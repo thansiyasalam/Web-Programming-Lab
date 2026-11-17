@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>program10</title>
+<style>
+img
+{
+margin-top:150px;
+margin-left:350px;
+border-radius:50%;
+width:550px;
+height:550px;
+}
+p{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<img src="car1.webp" id="i1" width="500" height="600" onmouseover="one()" onmouseout="two()" />
+<p id="p1">
+</p1>
+<script>
+function one()
+{
+document.getElementById("i1").src="car2.jpeg";
+document.getElementById("p1").innerHTML="onmouseover";
+document.getElementById("p1").style.color="blue";
+}
+function two()
+{
+document.getElementById("i1").src="car3.jpeg";
+document.getElementById("p1").innerHTML="onmouseout";
+document.getElementById("p1").style.color="red";
+}
+</script>
+</body>
+</html>
