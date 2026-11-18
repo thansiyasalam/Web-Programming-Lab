@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>program11</title>
+</head>
+<body>
+<h1>Form Validation</h1>
+<form name="form" action="" onsubmit="return validateform()">
+<label>Name:</label>
+<select name="init" id="init">
+<option>Mr.</option>
+<option>Mrs.</option>
+<option>Ms.</option>
+</select>
+<input type="text" id="fname" placeholder="Enter your Name"> <br><br><br>
+<label>phone</label>
+<select name="num" id="num">
+<option>+91</option>
+<option>+966</option>
+<option>+971</option>
+</select>
+<input type="tel" id="phone"  placeholder="Enter your Mobile Number"><br><br>
+<label>Email:</label>
+<input type="text" id="email" placeholder="Enter your Email"><br><br>
+<button type="submit">submit</button>
+</form>
+<script>
+function validateform()
+{
+var fname= document.form.fname.value.trim();
+var phone= document.form.phone.value.trim();
+var email= document.form.email.value.trim();
+
+if(fname=="")
+{
+alert("Enter your name");
+document.form.fname.focus();
+return false;
+}
+else if(!/^[a-zA-Z]+$/.test(fname))
+{
+alert("Enter valid Name");
+document.form.fname.focus();
+return false;
+}
+if(phone=="")
+{
+alert("Enter Mobile Number");
+document.form.phone.focus();
+return false;
+}
+else if(!/^[0-9]{10}$/.test(phone))
+{
+alert("Enter a valid 10 digit Mobile Number");
+document.form.phone.focus();
+return false;
+}
+if(email=="")
+{
+alert("Enter a  Email");
+document.form.email.focus();
+return false;
+}
+else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+{
+alert("Enter a valid Email");
+document.form.email.focus();
+return false;
+}
+alert("Form submitted successfully");
+return true;
+}
+
+</script>
+</body>
+</html>
